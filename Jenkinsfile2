@@ -1,0 +1,13 @@
+node{
+    stage('Code checkout -Selenium code'){
+        git 'https://github.com/pavankasiboina/selenium_insure-me.git'
+    }
+    
+    stage('To test the code'){
+        sh 'mvn clean package'
+    }
+    
+    stage('To run the insure-jar'){
+        sh 'java -jar insure-runnable.jar'
+    }
+}
