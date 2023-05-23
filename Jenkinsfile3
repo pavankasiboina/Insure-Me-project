@@ -1,0 +1,12 @@
+node{
+    stage('git check-out'){
+        git 'https://github.com/pavankasiboina/Insure-Me-project.git'
+    }
+    stage('Code Build'){
+        sh 'mvn clean package'
+    }
+    
+    stage("To deploy our image insure-me onto prodserver using ansiblep-laybook"){
+        ansiblePlaybook become: true, credentialsId: 'ssh-key-ansible', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'config-prodserver'
+    }
+}

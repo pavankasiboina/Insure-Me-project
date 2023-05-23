@@ -1,0 +1,20 @@
+---
+- name: This Playbook to deploy our image on testserver
+  hosts: prodservers
+  become: true
+  tasks:
+  - name: To update the packages
+    command: sudo apt-get update
+
+  - name: To install docker
+    command: sudo apt install docker.io -y
+
+  - name: To start docker service
+    command: sudo systemctl start docker
+
+  - name: To stop and remove existing/running insure-me container
+    command: sudo docker rm -f insure-me
+
+  - name: To deploy our image on testserver
+    command: sudo docker run -itd -p 9001:9001 --name insure-me pavankasiboina/insure-me:3.0
+
