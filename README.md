@@ -42,9 +42,9 @@ I have implement Continuous Integration & Continuous Deployment for insure-me us
    
 
 𝑷𝒓𝒐𝒅𝒖𝒄𝒕𝒊𝒐𝒏 𝑱𝒆𝒏𝒌𝒊𝒏𝒔 𝑷𝒊𝒑𝒆𝒍𝒊𝒏𝒆:
--- Now we need to deploy our application into production server automatically after the selenium pipeline job successful.
--- Write the ansible playbook file to deploy and configure the application insure-me on to the production server.
--- Now write a separate Jenkins pipeline to do this above job automatically.
+- Now we need to deploy our application into production server automatically after the selenium pipeline job successful.
+- Write the ansible playbook file to deploy and configure the application insure-me on to the production server.
+- Now write a separate Jenkins pipeline to do this above job automatically.
  
 Make sure that this pipeline will be only execute only after the selenium pipeline 
 executed successfully.
